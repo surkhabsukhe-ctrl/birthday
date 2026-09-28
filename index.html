@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday, AMNNU ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Caveat:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#24122c; --plum:#3a1d44; --wine:#5a2a55; --rose:#e88fa4; --blush:#f8dbe0;
+  --gold:#ecc98e; --paper:#fdf1ee; --ink:#3a2231;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --hand:'Caveat','Segoe Script','Bradley Hand',cursive;
+  --sans:'Jost','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);color:var(--blush);line-height:1.7;
+  background:radial-gradient(1200px 700px at 20% -10%,#5a2a55 0%,transparent 60%),
+             radial-gradient(1000px 800px at 100% 40%,#4a2050 0%,transparent 60%),
+             linear-gradient(180deg,var(--night),#2d1535 50%,var(--night));
+  background-attachment:fixed;overflow-x:hidden;
+}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ---------- nav ---------- */
+nav{position:fixed;right:max(14px,env(safe-area-inset-right));top:50%;transform:translateY(-50%);z-index:60;display:flex;flex-direction:column;gap:14px}
+nav a{position:relative;width:12px;height:12px;border-radius:50%;border:1.5px solid var(--gold);background:transparent;transition:.3s;display:block}
+nav a.on{background:var(--rose);border-color:var(--rose);transform:scale(1.35);box-shadow:0 0 12px var(--rose)}
+nav a span{position:absolute;right:22px;top:50%;transform:translateY(-50%) translateX(6px);white-space:nowrap;font-size:.8rem;background:var(--paper);color:var(--ink);padding:3px 10px;border-radius:20px;opacity:0;pointer-events:none;transition:.25s}
+nav a:hover span,nav a:focus-visible span{opacity:1;transform:translateY(-50%)}
+#music{position:fixed;left:max(14px,env(safe-area-inset-left));bottom:max(14px,env(safe-area-inset-bottom));z-index:60;display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:rgba(36,18,44,.7);backdrop-filter:blur(6px);color:var(--gold);font-size:18px;cursor:pointer}
+#music.show{display:block}
+
+/* ---------- hero ---------- */
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 20px 60px;position:relative}
+.arch{position:relative;width:min(300px,70vw);aspect-ratio:3/4;will-change:transform}
+.arch::before{content:"";position:absolute;inset:-14px;border:1px solid var(--gold);border-radius:999px 999px 30px 30px;opacity:.7;animation:breathe 5s ease-in-out infinite}
+.arch::after{content:"";position:absolute;inset:-40px;border-radius:50%;background:radial-gradient(circle,rgba(232,143,164,.35),transparent 65%);z-index:-1}
+.arch .pic{width:100%;height:100%;border-radius:999px 999px 24px 24px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5);background:var(--wine)}
+.pic img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes breathe{50%{transform:scale(1.03);opacity:1}}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,9vw,5.6rem);line-height:1.05;margin-top:48px;letter-spacing:.01em;color:var(--paper)}
+.hero h1 em{font-style:italic;color:var(--rose);font-weight:600}
+.quote{font-family:var(--hand);font-size:clamp(1.5rem,4vw,2.1rem);color:var(--gold);margin-top:14px}
+.hint{margin-top:44px;font-size:.85rem;color:var(--rose);opacity:.85;animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+.hero>*{opacity:0;animation:rise 1.2s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .arch{animation-delay:.1s}.hero h1{animation-delay:.6s}.hero .quote{animation-delay:1s}.hero .hint{animation-delay:1.5s,1.5s;animation-name:rise,bob}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+
+/* ---------- person sections ---------- */
+.person{min-height:100vh;display:flex;align-items:center;padding:90px 6vw;position:relative}
+.wrap{max-width:1050px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(30px,6vw,80px);align-items:center;width:100%}
+.person:nth-of-type(even) .wrap{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.person:nth-of-type(even) .polaroid{order:2}
+.polaroid{background:var(--paper);padding:14px 14px 56px;border-radius:4px;box-shadow:0 25px 60px rgba(0,0,0,.45);transform:rotate(-3deg);transition:transform .6s;max-width:340px;justify-self:center;width:100%;position:relative}
+.person:nth-of-type(even) .polaroid{transform:rotate(3deg)}
+.polaroid:hover{transform:rotate(0) scale(1.02)}
+.polaroid .pic{aspect-ratio:4/5;background:linear-gradient(135deg,var(--wine),var(--plum));position:relative;overflow:hidden}
+.polaroid .cap{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-family:var(--hand);font-size:1.7rem;color:var(--ink)}
+.polaroid::before{content:"";position:absolute;top:-14px;left:50%;width:90px;height:28px;transform:translateX(-50%) rotate(-2deg);background:rgba(236,201,142,.6);z-index:2}
+.noimg .pic::after{content:attr(data-i);position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:6rem;color:var(--rose);opacity:.7}
+.noimg img{display:none}
+.letter h2{font-family:var(--serif);font-weight:600;font-style:italic;font-size:clamp(2.2rem,5vw,3.4rem);color:var(--paper);line-height:1.1}
+.letter .rel{font-size:.95rem;color:var(--gold);margin:4px 0 22px}
+.letter p{font-family:var(--serif);font-size:clamp(1.12rem,2vw,1.32rem);line-height:1.75;color:var(--blush);max-width:56ch;border-left:2px solid var(--rose);padding-left:22px}
+.sign{display:block;font-family:var(--hand);font-size:2rem;color:var(--gold);margin-top:16px;padding-left:24px}
+.person.love .letter p{font-size:clamp(1.18rem,2.1vw,1.38rem)}
+.person.love .polaroid{box-shadow:0 25px 70px rgba(232,143,164,.4),0 0 0 1px var(--gold)}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.person:nth-of-type(odd) .polaroid.reveal:not(.in){transform:translateX(-50px) rotate(-8deg)}
+.person:nth-of-type(even) .polaroid.reveal:not(.in){transform:translateX(50px) rotate(8deg)}
+.polaroid.reveal.in{transform:rotate(-3deg)}
+.person:nth-of-type(even) .polaroid.reveal.in{transform:rotate(3deg)}
+
+/* ---------- game ---------- */
+.game{padding:100px 6vw;text-align:center;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.game h2,.end h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,5vw,3.2rem);color:var(--paper)}
+.game .sub{color:var(--gold);margin:6px 0 24px}
+.stats{display:flex;gap:26px;margin-bottom:22px;font-size:1.05rem}
+.stats b{font-family:var(--serif);font-size:1.6rem;color:var(--rose);margin-left:6px}
+.btn{font:inherit;cursor:pointer;background:transparent;border:1px solid var(--gold);color:var(--gold);padding:8px 22px;border-radius:30px;transition:.3s}
+.btn:hover{background:var(--gold);color:var(--night)}
+.board{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,2vw,14px);width:min(440px,92vw);margin:22px 0}
+.card{aspect-ratio:1;perspective:700px;cursor:pointer;background:none;border:0}
+.inner{position:relative;width:100%;height:100%;transition:transform .55s cubic-bezier(.3,.8,.3,1);transform-style:preserve-3d}
+.card.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border-radius:14px;display:grid;place-items:center;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.front{background:linear-gradient(145deg,var(--wine),var(--plum));border:1px solid rgba(236,201,142,.5);color:var(--gold);font-size:1.5rem}
+.card:hover .front{border-color:var(--rose)}
+.back{transform:rotateY(180deg);background:var(--paper);font-size:clamp(1.6rem,7vw,2.4rem)}
+.card.match .back{background:var(--blush);box-shadow:0 0 22px var(--rose);animation:pop .6s}
+@keyframes pop{40%{transform:rotateY(180deg) scale(1.15)}}
+#win{max-width:440px;background:rgba(253,241,238,.08);border:1px solid var(--gold);border-radius:18px;padding:22px 26px;opacity:0;transform:scale(.9);height:0;overflow:hidden;padding-block:0;transition:.6s;font-family:var(--serif);font-size:1.3rem}
+#win.show{opacity:1;transform:none;height:auto;padding-block:22px}
+
+/* ---------- ending ---------- */
+.end{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 7vw 80px}
+.end h2{font-size:clamp(2.6rem,9vw,6rem);line-height:1.05}
+.end h2 em{color:var(--rose);font-style:italic}
+.end p{font-family:var(--serif);font-size:clamp(1.2rem,2.4vw,1.55rem);max-width:34ch;margin:28px auto 8px;color:var(--blush)}
+.end .sign{padding:0}
+.big{font-size:3rem;margin-bottom:18px;animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{15%{transform:scale(1.18)}30%{transform:scale(1)}45%{transform:scale(1.12)}}
+
+@media(max-width:760px){
+  .wrap,.person:nth-of-type(even) .wrap{grid-template-columns:1fr}
+  .person:nth-of-type(even) .polaroid{order:0}
+  .person{padding:70px 22px}
+  nav{gap:11px}nav a span{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}.reveal,.hero>*{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+
+<nav aria-label="Sections">
+  <a href="#top" data-t="Amnnu"><span>Amnnu</span></a>
+  <a href="#father"><span>Father</span></a>
+  <a href="#mother"><span>Mother</span></a>
+  <a href="#sister"><span>Sister</span></a>
+  <a href="#brother"><span>Brother</span></a>
+  <a href="#boyfriend"><span>Boyfriend</span></a>
+  <a href="#game"><span>Play</span></a>
+  <a href="#end"><span>Finale</span></a>
+</nav>
+<button id="music" aria-label="Play music" title="Music">♪</button>
+<audio id="aud" src="music.mp3" loop preload="auto"></audio>
+
+<header class="hero" id="top">
+  <div class="arch" id="arch"><div class="pic" data-i="A"><img src="girl.png" alt="Amnnu"></div></div>
+  <h1>Happy Birthday,<br><em>AMNNU</em> ❤️</h1>
+  <div class="quote">You're my favourite place to come home to.</div>
+  <div class="hint">scroll, there are people who wrote to you ↓</div>
+</header>
+
+<main>
+<section class="person" id="father"><div class="wrap">
+  <figure class="polaroid reveal"><div class="pic" data-i="P"><img src="father.png" alt="Father"></div><figcaption class="cap">Papa</figcaption></figure>
+  <div class="letter reveal"><h2>Father</h2><div class="rel">writing from far away</div>
+  <p>Amnnu, my girl, happy birthday. I'm sorry I'm not sitting at the table with you today. Every year the distance feels a little heavier, and every year I remind myself why I'm here. It's for you. I still remember you running to the door when I came home, checking my pockets for chocolates. Now look at you, doing things I only used to dream about. Your mother sends me photos and I show them to everyone at work, whether they ask or not. I'm so proud of you, more than a phone call can carry. Eat proper cake today, not just one bite and "I'm full." I'll call tonight, so keep your phone close. Never forget that Papa is always with you. Love you, my princess.</p>
+  <span class="sign">Papa</span></div>
+</div></section>
+
+<section class="person" id="mother"><div class="wrap">
+  <figure class="polaroid reveal"><div class="pic" data-i="M"><img src="mother.png" alt="Mother"></div><figcaption class="cap">Mummy</figcaption></figure>
+  <div class="letter reveal"><h2>Mother</h2><div class="rel">from the kitchen, where you always end up</div>
+  <p>Happy birthday, beta. Some mornings I still wake up expecting to hear you in the kitchen. I know you, you know. I know you say you're not hungry and then finish half my plate. I know you leave your tea to go cold because you got busy with your phone, and that you sleep with one foot outside the blanket. I know when you're tired even if you say "I'm fine, Mummy." I've watched you grow into such a strong, kind girl, and I thank God every day that you are mine. Please don't skip meals for work, and drink some water. Whatever happens in life, you can always come home. My door and my heart are open. I love you so much.</p>
+  <span class="sign">Mummy</span></div>
+</div></section>
+
+<section class="person" id="sister"><div class="wrap">
+  <figure class="polaroid reveal"><div class="pic" data-i="S"><img src="sister.png" alt="Sister"></div><figcaption class="cap">your little sis</figcaption></figure>
+  <div class="letter reveal"><h2>Sister</h2><div class="rel">from the one who steals your charger</div>
+  <p>Happy birthday, Didi! First things first: I still have the hoodie you think you lost, and no, I'm not giving it back. You're the only person who can scold me and then help me with my homework in the same five minutes. You take my snacks, boss me around, and somehow I still tell you everything. Yes, I secretly copy your style. Don't let it go to your head. Honestly though, I'm really proud of you. When people say "oh, you're Amnnu's sister?" I stand a little taller. You're my best friend even when we're fighting about the charger. Thank you for always having my back. Today you're the queen, so I'll let you win every argument. Just today. Love you loads!</p>
+  <span class="sign">your favourite (only) little sister</span></div>
+</div></section>
+
+<section class="person" id="brother"><div class="wrap">
+  <figure class="polaroid reveal"><div class="pic" data-i="B"><img src="brother.png" alt="Brother"></div><figcaption class="cap">your little bro</figcaption></figure>
+  <div class="letter reveal"><h2>Brother</h2><div class="rel">reluctantly writing something nice</div>
+  <p>Happy birthday, Di! Congratulations on surviving another year of me. I know I'm annoying, but somebody has to keep you humble. You take forever to get ready, you laugh at your own jokes before you finish them, and you say "five minutes" when you mean thirty. Still, I'd pick you as my sister every single time. I've looked up to you since I was small, even if I'd never say it out loud. When I mess up, you're the first to yell at me and the first to cover for me. I hope you know how much that means. Today I won't tease you... much. Enjoy your day, eat all the cake, and keep some for me. I'm proud of you, always.</p>
+  <span class="sign">your brother (the funny one)</span></div>
+</div></section>
+
+<section class="person love" id="boyfriend"><div class="wrap">
+  <figure class="polaroid reveal"><div class="pic" data-i="♥"><img src="boyfriend.png" alt="Boyfriend"></div><figcaption class="cap">yours ❤️</figcaption></figure>
+  <div class="letter reveal"><h2>Boyfriend</h2><div class="rel">the letter I rewrote five times</div>
+  <p>Happy Birthday to the most beautiful girl ❤️. I know we don’t talk as much as we used to, and sometimes our conversations are just small little talks, but even those little conversations mean a lot to me. I know you probably get bored of me sometimes, and maybe I’m not always the most interesting person to talk to, but I still want you to know that I love you and I genuinely care about you. You are such a beautiful person, not just because of how pretty you are, but because of the kind of person you are. I hope you always keep that beautiful smile on your face and never forget how special you are. On your birthday, I just want to wish you all the happiness, love, and success you deserve. I may not always be around or able to talk to you the way I wish I could, but you will always have a special place in my heart. Happy Birthday, my love. ❤️</p>
+  <span class="sign">with all my heart</span></div>
+</div></section>
+
+<section class="game" id="game">
+  <h2 class="reveal">A little game for you</h2>
+  <div class="sub reveal">Match all the pairs. Take your time, birthday girl.</div>
+  <div class="stats"><div>Moves<b id="moves">0</b></div><div>Time<b id="time">0:00</b></div><button class="btn" id="reset">Restart</button></div>
+  <div class="board" id="board"></div>
+  <div id="win" role="status"></div>
+</section>
+
+<section class="end" id="end">
+  <div class="big">❤️</div>
+  <h2>Happy Birthday,<br><em>AMNNU</em> ❤️</h2>
+  <p>Another year of you, and I'm still the luckiest one. Make a wish. I'll spend the year helping it come true. I love you.</p>
+  <span class="sign">Yours, always</span>
+  <button class="btn" id="more" style="margin-top:30px">Tap for more hearts</button>
+</section>
+</main>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* images: fall back to an initial if a file is missing */
+  $$('.pic img').forEach(img => {
+    const ok = () => {};
+    const bad = () => img.parentElement.classList.add('noimg');
+    img.addEventListener('error', bad);
+    if (img.complete && !img.naturalWidth) bad();
+  });
+  $$('.pic').forEach(p => { p.addEventListener('error', e => { if (e.target.tagName === 'IMG') p.classList.add('noimg'); }, true); });
+  const styleFix = document.createElement('style');
+  styleFix.textContent = '.pic.noimg::after{content:attr(data-i);position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:6rem;color:var(--rose)}.pic.noimg img{display:none}.arch .pic{position:relative}';
+  document.head.appendChild(styleFix);
+
+  /* reveal on scroll */
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .2 });
+  $$('.reveal').forEach(el => io.observe(el));
+
+  /* nav highlight */
+  const links = $$('nav a'), secs = links.map(a => $(a.getAttribute('href')));
+  const nio = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach((a, i) => a.classList.toggle('on', secs[i] === e.target));
+  }), { threshold: .5 });
+  secs.forEach(s => nio.observe(s));
+
+  /* hero parallax */
+  const arch = $('#arch');
+  if (!reduce) addEventListener('scroll', () => {
+    const y = Math.min(scrollY, innerHeight);
+    arch.style.transform = `translateY(${y * .12}px) scale(${1 - y / innerHeight * .08})`;
+  }, { passive: true });
+
+  /* ---------- hearts + confetti canvas ---------- */
+  const cv = $('#fx'), cx = cv.getContext('2d');
+  let W, H, dpr = Math.min(devicePixelRatio || 1, 2);
+  const size = () => { W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0); };
+  size(); addEventListener('resize', size);
+  const cols = ['#e88fa4', '#f8dbe0', '#ecc98e', '#c76b8a', '#fdf1ee'];
+  const rnd = (a, b) => a + Math.random() * (b - a);
+  const heart = (x, y, s, rot, col, a) => {
+    cx.save(); cx.translate(x, y); cx.rotate(rot); cx.globalAlpha = a; cx.fillStyle = col; cx.scale(s, s);
+    cx.beginPath(); cx.moveTo(0, .35); cx.bezierCurveTo(-1, -.4, -.5, -1, 0, -.45); cx.bezierCurveTo(.5, -1, 1, -.4, 0, .35); cx.fill(); cx.restore();
+  };
+  const ambient = Array.from({ length: reduce ? 0 : 22 }, () => ({ x: rnd(0, 1), y: rnd(0, 1), s: rnd(6, 16), v: rnd(.15, .5), p: rnd(0, 6), c: cols[(Math.random() * 3) | 0], a: rnd(.12, .35) }));
+  let bits = [], finale = false;
+  const burst = (x, y, n = 60) => { if (reduce) n = 12; for (let i = 0; i < n; i++) { const a = rnd(0, 6.28), v = rnd(3, 9); bits.push({ x, y, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 4, g: .14, r: rnd(0, 6), vr: rnd(-.2, .2), s: rnd(5, 11), c: cols[(Math.random() * cols.length) | 0], h: Math.random() < .55, l: 1, d: rnd(.006, .014) }); } };
+  const rain = () => { bits.push({ x: rnd(0, W), y: -10, vx: rnd(-1, 1), vy: rnd(1.5, 3.5), g: .01, r: rnd(0, 6), vr: rnd(-.1, .1), s: rnd(5, 10), c: cols[(Math.random() * cols.length) | 0], h: Math.random() < .5, l: 1, d: .003 }); };
+  let t = 0;
+  (function loop() {
+    cx.clearRect(0, 0, W, H); t += .01;
+    ambient.forEach(h => {
+      h.y -= h.v / H * 60 * .5; if (h.y < -.05) { h.y = 1.05; h.x = rnd(0, 1); }
+      heart(h.x * W + Math.sin(t + h.p) * 20, h.y * H, h.s, Math.sin(t + h.p) * .3, h.c, h.a);
+    });
+    if (finale && !reduce && Math.random() < .35) rain();
+    bits = bits.filter(b => b.l > 0 && b.y < H + 20);
+    bits.forEach(b => {
+      b.vy += b.g; b.vx *= .99; b.x += b.vx; b.y += b.vy; b.r += b.vr; b.l -= b.d;
+      if (b.h) heart(b.x, b.y, b.s, b.r, b.c, Math.max(b.l, 0));
+      else { cx.save(); cx.translate(b.x, b.y); cx.rotate(b.r); cx.globalAlpha = Math.max(b.l, 0); cx.fillStyle = b.c; cx.fillRect(-b.s / 2, -b.s / 4, b.s, b.s / 2); cx.restore(); }
+    });
+    requestAnimationFrame(loop);
+  })();
+
+  /* finale trigger */
+  new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting && !finale) burst(W / 2, H / 2, 90);
+    finale = e.isIntersecting;
+  }), { threshold: .5 }).observe($('#end'));
+  $('#more').onclick = e => { const r = e.target.getBoundingClientRect(); burst(r.left + r.width / 2, r.top, 80); };
+
+  /* ---------- memory game ---------- */
+  const emojis = ['🌹', '💌', '🍰', '🎁', '🌙', '🦋', '💍', '📸'];
+  const board = $('#board'), mv = $('#moves'), tm = $('#time'), win = $('#win');
+  let first = null, lock = false, moves = 0, matched = 0, secs0 = 0, timer = null;
+  const fmt = s => Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+  function build() {
+    clearInterval(timer); timer = null; first = null; lock = false; moves = 0; matched = 0; secs0 = 0;
+    mv.textContent = 0; tm.textContent = '0:00'; win.classList.remove('show'); board.innerHTML = '';
+    [...emojis, ...emojis].sort(() => Math.random() - .5).forEach(em => {
+      const c = document.createElement('button');
+      c.className = 'card'; c.dataset.e = em; c.setAttribute('aria-label', 'Memory card');
+      c.innerHTML = '<div class="inner"><div class="face front">❤</div><div class="face back">' + em + '</div></div>';
+      c.onclick = () => pick(c); board.appendChild(c);
+    });
+  }
+  function pick(c) {
+    if (lock || c.classList.contains('flip')) return;
+    if (!timer) timer = setInterval(() => tm.textContent = fmt(++secs0), 1000);
+    c.classList.add('flip');
+    if (!first) { first = c; return; }
+    mv.textContent = ++moves;
+    if (first.dataset.e === c.dataset.e) {
+      first.classList.add('match'); c.classList.add('match'); first = null;
+      if (++matched === emojis.length) done();
+    } else {
+      lock = true; const a = first; first = null;
+      setTimeout(() => { a.classList.remove('flip'); c.classList.remove('flip'); lock = false; }, 850);
+    }
+  }
+  function done() {
+    clearInterval(timer);
+    win.innerHTML = 'You did it, Amnnu! ❤️<br><small style="font-family:var(--sans);font-size:.95rem;color:var(--gold)">' + moves + ' moves in ' + fmt(secs0) + '. You still win in my book, always.</small>';
+    win.classList.add('show');
+    const r = win.getBoundingClientRect();
+    burst(r.left + r.width / 2, r.top + 20, 110); setTimeout(() => burst(W * .25, H * .5, 60), 300); setTimeout(() => burst(W * .75, H * .5, 60), 500);
+  }
+  $('#reset').onclick = build; build();
+
+  /* ---------- music (optional) ---------- */
+  const aud = $('#aud'), mb = $('#music');
+  aud.addEventListener('canplay', () => mb.classList.add('show'));
+  aud.addEventListener('error', () => mb.classList.remove('show'));
+  mb.onclick = () => {
+    if (aud.paused) { aud.play().then(() => { mb.textContent = '❚❚'; }).catch(() => {}); }
+    else { aud.pause(); mb.textContent = '♪'; }
+  };
+})();
+</script>
+</body>
+</html>
